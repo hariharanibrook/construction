@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"; // ✅ for forgot password
 import { useAuth } from "./AuthContext";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import bgImage from "./assests/image.jpg";
 
 const USERS = [
   { email: "admin@example.com", password: "admin123", role: "Admin" },
@@ -90,7 +91,7 @@ export default function Login() {
     <div
       className="d-flex justify-content-center align-items-center vh-100"
       style={{
-        backgroundImage: "url('/image.jpg')",
+        backgroundImage: `url(${bgImage})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         position: "relative",
