@@ -9,6 +9,7 @@ const USERS = [
   { email: "admin@gmail.com", password: "admin123", role: "Admin" },
   { email: "manager@gmail.com", password: "manager123", role: "Manager" },
   { email: "employee@gmail.com", password: "employee123", role: "Employee" },
+  { email: "test@gamil.com", password: "test123", role: "test" },
 ];
 
 const MAX_ATTEMPTS = 5;

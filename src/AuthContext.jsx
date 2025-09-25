@@ -12,7 +12,9 @@ const LOCAL_ROLE_KEY = "app_role";
 
 export function AuthProvider({ children }) {
   const navigate = useNavigate();
-  const [token, setToken] = useState(() => localStorage.getItem(LOCAL_TOKEN_KEY));
+  const [token, setToken] = useState(() =>
+    localStorage.getItem(LOCAL_TOKEN_KEY)
+  );
   const [role, setRole] = useState(() => localStorage.getItem(LOCAL_ROLE_KEY));
   const [loading, setLoading] = useState(false);
 
@@ -56,7 +58,9 @@ export function AuthProvider({ children }) {
   };
 
   return (
-    <AuthContext.Provider value={{ token, role, login, setSession, logout, loading }}>
+    <AuthContext.Provider
+      value={{ token, role, login, setSession, logout, loading }}
+    >
       {children}
     </AuthContext.Provider>
   );
