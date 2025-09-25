@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { HashRouter, Routes, Route, Navigate } from "react-router-dom";
 import { AuthProvider } from "./AuthContext";
 import Login from "./Login";
 import RequireAuth from "./RequireAuth";
@@ -13,7 +13,7 @@ import ForgotPassword from "./pages/ForgotPassword";
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <AuthProvider>
         <Routes>
           <Route path="/" element={<Navigate to="/login" replace />} />
@@ -115,6 +115,6 @@ export default function App() {
           />
         </Routes>
       </AuthProvider>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
