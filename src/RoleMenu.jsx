@@ -30,29 +30,29 @@ export default function RoleMenu() {
       style={{
         width: 220,
         minHeight: "100vh",
-        backgroundColor: "#343a40",
-        color: "white",
-        padding: "20px 12px",
+        background: "linear-gradient(180deg, #ffb400, #ff6f00)", // yellow-orange gradient
+        color: "#000",
+        padding: "20px 15px",
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
+        boxShadow: "2px 0 6px rgba(0,0,0,0.3)",
       }}
     >
-      {/* Role Info */}
+      {/* Role & Menu */}
       <div>
         <div
           style={{
-            marginBottom: 20,
+            marginBottom: 25,
             fontWeight: "bold",
-            fontSize: 14,
-            borderBottom: "1px solid #495057",
-            paddingBottom: 10,
+            fontSize: 18,
+            borderBottom: "1px solid rgba(0,0,0,0.2)",
+            paddingBottom: 12,
           }}
         >
           Role: {role}
         </div>
 
-        {/* Menu Links */}
         <nav>
           {items.map((it) => {
             const active = location.pathname === it.to;
@@ -61,23 +61,18 @@ export default function RoleMenu() {
                 key={it.to}
                 to={it.to}
                 style={{
-                  display: "block",
-                  padding: "10px 15px",
+                  display: "flex",
+                  alignItems: "center",
+                  padding: "10px 12px",
                   borderRadius: 8,
-                  marginBottom: 8,
+                  marginBottom: 10,
                   textDecoration: "none",
-                  color: active ? "#ffc107" : "white",
-                  backgroundColor: active ? "#495057" : "transparent",
-                  transition: "all 0.2s",
+                  fontWeight: 500,
+                  color: active ? "#fff" : "#000",
+                  backgroundColor: active ? "rgba(0,0,0,0.2)" : "transparent",
+                  transition: "all 0.2s ease-in-out",
+                  boxShadow: active ? "inset 3px 0 #000" : "none",
                 }}
-                onMouseEnter={(e) =>
-                  (e.currentTarget.style.backgroundColor = "#495057")
-                }
-                onMouseLeave={(e) =>
-                  (e.currentTarget.style.backgroundColor = active
-                    ? "#495057"
-                    : "transparent")
-                }
               >
                 {it.label}
               </Link>
@@ -95,11 +90,14 @@ export default function RoleMenu() {
             padding: "10px",
             border: "none",
             borderRadius: 8,
-            backgroundColor: "#ffc107",
-            color: "#343a40",
+            backgroundColor: "#000",
+            color: "#ffb400",
             fontWeight: "bold",
             cursor: "pointer",
+            transition: "all 0.2s",
           }}
+          onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#333")}
+          onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#000")}
         >
           Logout
         </button>

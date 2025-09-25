@@ -6,9 +6,9 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import bgImage from "./assests/image.jpg";
 
 const USERS = [
-  { email: "admin@example.com", password: "admin123", role: "Admin" },
-  { email: "manager@example.com", password: "manager123", role: "Manager" },
-  { email: "employee@example.com", password: "employee123", role: "Employee" },
+  { email: "admin@gmail.com", password: "admin123", role: "Admin" },
+  { email: "manager@gmail.com", password: "manager123", role: "Manager" },
+  { email: "employee@gmail.com", password: "employee123", role: "Employee" },
 ];
 
 const MAX_ATTEMPTS = 5;
@@ -44,7 +44,7 @@ export default function Login() {
     if (Date.now() - attempts.firstAttemptAt > resetMs) {
       setAttempts({ count: 0, firstAttemptAt: Date.now() });
     }
-  }, []);
+  }, [attempts.firstAttemptAt]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
